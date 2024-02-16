@@ -3,12 +3,17 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>To-Do List App</title>
-        <link rel = "stylesheet" href = "style.css">
+        <link rel = "stylesheet" href = "cs/style.css">
+        <link rel="stylesheet" href="cs/styleForDeadline.css">
+        <link rel="stylesheet" href="cs/styleForToDo.css">
     </head>
     <body>
+        
          <div class="container">
+            <h2 style="color:burlywood">Time:&nbsp;</h2>
+            <h2 id="clock" ></h2>
             <div class="todo-app">
-                <h2>To-Do List <img src="images/icon.png"></h2>
+                <h2>To-Do List <img src="cs/images/icon.png"></h2>
                 <div class="row">
                     <input type="text" id="input-box" placeholder="Add Your New Task">
                     <button onclick="addTask()">Add</button>
@@ -16,7 +21,21 @@
                 <ul id="list-container">
                 </ul>
             </div>
+            <div class="deadline">
+                <h2>Deadlines<img src="cs/images/deadlineIcon.png"></h2>
+                <div class="row">
+                    <input type="text" id="deadline-task" placeholder="Enter Deadline Task">
+                    <input  type="date" id="deadline-date-input"/>
+                    <button onclick="addDeadline()" >Set Deadline</button> 
+                </div>
+                <ul id="deadlineList-container">
+                </ul>
+            </div>  
          </div>
-         <script src="script.js"></script>
+        
+
+         <script src="js/script.js"></script>
+         <script src="js/scriptDeadline.js"></script>
+         <script src="js/scriptToDo.js"></script>
     </body>
 </html>

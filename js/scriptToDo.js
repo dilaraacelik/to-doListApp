@@ -13,7 +13,7 @@ function addTask(){
         span.innerHTML = "\u00d7";
         li.appendChild(span);
         inputBox.value ='';
-        saveData();
+        saveData(listContainer);
     }
 }
 
@@ -26,7 +26,12 @@ listContainer.addEventListener("click",function(e){
         e.target.parentElement.remove();
         saveData();
     }
-},false)
+},false);
+
+
+inputBox.addEventListener( 'keydown',function(event){
+    if(event.key === 'Enter') addTask();
+},false);
 
 function saveData(){
     localStorage.setItem("data", listContainer.innerHTML);
